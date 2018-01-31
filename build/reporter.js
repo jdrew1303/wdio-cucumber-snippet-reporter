@@ -112,25 +112,24 @@ var CucumberSnippetReporter = function (_events$EventEmitter) {
 
             var featureTitle = '';
             var featureTitleUndefinedStep = '';
-            var scenarioTitle = '';
+            // let scenarioTitle = ''
             var featureObject = {};
             for (var specUid in suites) {
-
                 var spec = suites[specUid];
                 var specTitle = suites[specUid].title;
 
-                //check if spec.tests has tests if not, it is a feature description
+                // check if spec.tests has tests if not, it is a feature description
                 var specTitleIsFeature = Object.keys(spec.tests).length === 0 && spec.tests.constructor === Object;
 
-                //feaature title
+                // feaature title
                 if (specTitleIsFeature) {
                     featureTitle = specTitle;
-                    scenarioTitle = '';
+                    // scenarioTitle = ''
                     featureObject.name = featureTitle;
                     featureObject.scenarios = [];
-                    //sceanriotitle
+                    // sceanriotitle
                 } else {
-                    scenarioTitle = specTitle;
+                    // scenarioTitle = specTitle
 
                     // log if there are unspecified steps
                     for (var testUid in spec.tests) {
@@ -139,7 +138,7 @@ var CucumberSnippetReporter = function (_events$EventEmitter) {
                         var stepName = testTitle.split(' (undefined step)')[0];
 
                         if (test.state === 'pending' && testTitle.indexOf('(undefined step)') > -1) {
-                            //check for new feature?
+                            // check for new feature?
                             if (featureTitleUndefinedStep !== featureTitle) {
                                 output += ' \n';
                                 output += ' \n';
