@@ -46,7 +46,7 @@
     "should": "~11.2.1",
     "sinon": "~3.2.0"
   },
-  "homepage": "https://github.com/johanvaniperen/wdio-cucumber-snippet-reporter#readme,
+  "homepage": "https://github.com/johanvaniperen/wdio-cucumber-snippet-reporter#readme",
   "keywords": [
     "cucumber",
     "snippet",
