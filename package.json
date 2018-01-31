@@ -1,6 +1,6 @@
 {
   "name": "wdio-cucumber-snippet-reporter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "creates cucumber step-definitions.",
   "repository": "https://github.com/johanvaniperen/wdio-cucumber-snippet-reporter",
   "main": "build/reporter.js",
@@ -21,6 +21,7 @@
     "watch": "npm run compile -- --watch"
   },
   "author": "Johan van Iperen",
+  "email": "johan@johanvaniperen.nl",
   "deprecated": false,
   "devDependencies": {
     "babel-cli": "~6.24.1",
@@ -45,6 +46,16 @@
     "should": "~11.2.1",
     "sinon": "~3.2.0"
   },
+  "homepage": "https://github.com/johanvaniperen/wdio-cucumber-snippet-reporter#readme,
+  "keywords": [
+    "cucumber",
+    "snippet",
+    "reporter",
+    "webdriverio",
+    "wdio",
+    "wdio-plugin",
+    "wdio-reporter"
+  ],
   "directories": {
     "lib": "./lib"
   },

@@ -9,7 +9,7 @@ The easiest way is to keep `wdio-cucumber-snippet-reporter` as a devDependency i
 ```json
 {
   "devDependencies": {
-    "wdio-cucumber-snippet-reporter": "~0.0.1"
+    "wdio-cucumber-snippet-reporter": "~0.0.3"
   }
 }
 ```
