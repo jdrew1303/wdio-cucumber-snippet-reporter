@@ -1,6 +1,6 @@
 {
   "name": "wdio-cucumber-snippet-reporter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "creates cucumber step-definitions.",
   "repository": "https://github.com/johanvaniperen/wdio-cucumber-snippet-reporter",
   "main": "build/reporter.js",
