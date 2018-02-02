@@ -111,7 +111,8 @@ var CucumberSnippetReporter = function (_events$EventEmitter) {
             var output = '';
 
             var featureTitle = '';
-            var featureTitleUndefinedStep = '';
+            var featureTitleUndefinedStep = null;
+            var snippetArray = [];
             // let scenarioTitle = ''
             var featureObject = {};
             for (var specUid in suites) {
@@ -148,8 +149,39 @@ var CucumberSnippetReporter = function (_events$EventEmitter) {
                                 output += '** Copy and Paste the following snippet(s) into your step definitions\n';
                                 featureTitleUndefinedStep = featureTitle;
                             }
+                            var snippet = '\n' + this.getSnippetPhrase(stepName);
+                            var phraseExists = false;
+                            var _iteratorNormalCompletion = true;
+                            var _didIteratorError = false;
+                            var _iteratorError = undefined;
 
-                            output += '\n' + this.getSnippetPhrase(stepName);
+                            try {
+                                for (var _iterator = snippetArray[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                                    var existingPhrase = _step.value;
+
+                                    if (snippet === existingPhrase) {
+                                        phraseExists = true;
+                                    }
+                                }
+                            } catch (err) {
+                                _didIteratorError = true;
+                                _iteratorError = err;
+                            } finally {
+                                try {
+                                    if (!_iteratorNormalCompletion && _iterator.return) {
+                                        _iterator.return();
+                                    }
+                                } finally {
+                                    if (_didIteratorError) {
+                                        throw _iteratorError;
+                                    }
+                                }
+                            }
+
+                            if (!phraseExists) {
+                                output += snippet;
+                                snippetArray.push(snippet);
+                            }
                         }
                     }
                 }
