@@ -2,6 +2,11 @@
 
 > A WebdriverIO plugin to generate cucumber step definitions snippets to paste in your code.
 
+Run a test. It automaticly reports you the snippet output when steps are not specified.
+Copy and paste the snippet in your step definitions file. When ready with your step remove the line "return 'pending'" and off you go!
+
+![Spec Reporter](https://github.com/johanvaniperen/images/blob/master/snippet-example.png?raw=true")
+
 ## Installation
 
 The easiest way is to keep `wdio-cucumber-snippet-reporter` as a devDependency in your `package.json`.
@@ -9,7 +14,7 @@ The easiest way is to keep `wdio-cucumber-snippet-reporter` as a devDependency i
 ```json
 {
   "devDependencies": {
-    "wdio-cucumber-snippet-reporter": "~0.0.3"
+    "wdio-cucumber-snippet-reporter": "~0.0.5"
   }
 }
 ```
@@ -31,6 +36,11 @@ module.exports = {
   // ...
   reporters: ['dot', 'spec', 'cucumber-snippet'],
   // ...
+  cucumberOpts: {
+    // ...
+      ignoreUndefinedDefinitions: true,  
+    // ...    
+  }
 };
 ```
 
