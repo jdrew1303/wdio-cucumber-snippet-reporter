@@ -14,7 +14,7 @@ The easiest way is to keep `wdio-cucumber-snippet-reporter` as a devDependency i
 ```json
 {
   "devDependencies": {
-    "wdio-cucumber-snippet-reporter": "~0.0.4"
+    "wdio-cucumber-snippet-reporter": "~0.0.5"
   }
 }
 ```
@@ -30,12 +30,18 @@ npm i wdio-cucumber-snippet-reporter -D
 Following code shows the default wdio test runner configuration. Just add `'cucumber-snippet'` as reporter
 to the array.
 
+To make it work, the parameter value of: ignoreUndefinedDefinitions in cucumberOpts must be set to true.
 ```js
 // wdio.conf.js
 module.exports = {
   // ...
   reporters: ['dot', 'spec', 'cucumber-snippet'],
   // ...
+  cucumberOpts: {
+    // ...
+      ignoreUndefinedDefinitions: true,  
+    // ...    
+  }
 };
 ```
 
